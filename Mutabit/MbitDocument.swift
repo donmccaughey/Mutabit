@@ -20,11 +20,29 @@ class MbitDocument: NSDocument {
     }
 
     override func data(ofType typeName: String) throws -> Data {
-        throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
+        let xml = """
+        <?xml version='1.0' encoding='utf-8'?>
+        <!DOCTYPE mutabit SYSTEM 'https://donm.cc/dtds/mutabit.dtd'>
+        <mutabit version='1.0'>
+            <input format='csv'><![CDATA[\(inputTextView.string)]]></input>
+            <output format='json'><![CDATA[\(outputTextView.string)]]></output>
+            <prompt llm='TestLlama v0'><![CDATA[\(promptTextView.string)]]></prompt>
+            <script language='Python 3.13'><![CDATA[\(scriptTextView.string)]]></script>
+        </mutabit>
+        """
+        return xml.data(using: .utf8) ?? Data()
     }
 
     override func read(from data: Data, ofType typeName: String) throws {
-        throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
+        guard let xml = MbitXML(data: data) else {
+            throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
+        }
+        
+        DispatchQueue.main.async {
+            self.inputTextView.string = xml.input
+            self.outputTextView.string = xml.output
+            self.promptTextView.string = xml.prompt
+            self.scriptTextView.string = xml.script
+        }
     }
-
 }

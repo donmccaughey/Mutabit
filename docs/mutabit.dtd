@@ -1,0 +1,19 @@
+<!ELEMENT mutabit (input, output, prompt, script)>
+<!ATTLIST mutabit
+    version CDATA #REQUIRED>
+
+<!ELEMENT input (#PCDATA)>
+<!ATTLIST input
+    format CDATA #REQUIRED>
+
+<!ELEMENT output (#PCDATA)>
+<!ATTLIST output
+    format CDATA #REQUIRED>
+
+<!ELEMENT prompt (#PCDATA)>
+<!ATTLIST prompt
+    llm CDATA #REQUIRED>
+
+<!ELEMENT script (#PCDATA)>
+<!ATTLIST script
+    language CDATA #REQUIRED>

@@ -8,15 +8,15 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MbitDocument" customModule="Mutabit" customModuleProvider="target">
             <connections>
+                <outlet property="inputTextView" destination="yEb-Sf-Iv8" id="74k-Jv-uYE"/>
                 <outlet property="outputTextView" destination="gkj-Qd-7eu" id="lLp-Wk-igA"/>
                 <outlet property="promptTextView" destination="sXS-EE-Hna" id="LYv-5O-010"/>
                 <outlet property="scriptTextView" destination="fL6-Ku-3gL" id="jMz-H7-b2j"/>
-                <outlet property="sourceTextView" destination="yEb-Sf-Iv8" id="74k-Jv-uYE"/>
                 <outlet property="window" destination="xOd-HO-29H" id="JIz-fz-R2o"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="xOd-HO-29H" userLabel="Window">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -27,7 +27,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1B-d5-Hlu" userLabel="Source Text View">
+                    <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1B-d5-Hlu" userLabel="Input Text View">
                         <rect key="frame" x="20" y="190" width="366" height="379"/>
                         <clipView key="contentView" drawsBackground="NO" id="G0G-76-2Ru">
                             <rect key="frame" x="0.0" y="0.0" width="366" height="379"/>
@@ -41,7 +41,22 @@
                                     <size key="minSize" width="366" height="379"/>
                                     <size key="maxSize" width="397" height="10000000"/>
                                     <attributedString key="textStorage">
-                                        <fragment content="(source)">
+                                        <fragment content="(">
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" usesAppearanceFont="YES"/>
+                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="input">
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="12" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content=")">
                                             <attributes>
                                                 <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                 <font key="NSFont" usesAppearanceFont="YES"/>

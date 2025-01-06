@@ -2,10 +2,10 @@ import Cocoa
 
 
 class MbitDocument: NSDocument {
+    @IBOutlet weak var inputTextView: NSTextView!
     @IBOutlet weak var outputTextView: NSTextView!
     @IBOutlet weak var promptTextView: NSTextView!
     @IBOutlet weak var scriptTextView: NSTextView!
-    @IBOutlet weak var sourceTextView: NSTextView!
     
     override init() {
         super.init()

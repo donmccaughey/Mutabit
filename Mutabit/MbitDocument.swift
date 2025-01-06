@@ -1,7 +1,7 @@
 import Cocoa
 
 
-class Document: NSDocument {
+class MbitDocument: NSDocument {
 
     override init() {
         super.init()
@@ -12,7 +12,7 @@ class Document: NSDocument {
     }
 
     override var windowNibName: NSNib.Name? {
-        return NSNib.Name("Document")
+        return NSNib.Name("MbitDocument")
     }
 
     override func data(ofType typeName: String) throws -> Data {

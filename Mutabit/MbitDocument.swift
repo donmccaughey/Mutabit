@@ -7,6 +7,13 @@ class MbitDocument: NSDocument {
     @IBOutlet weak var promptTextView: NSTextView!
     @IBOutlet weak var scriptTextView: NSTextView!
     
+    private var isNewDocument = true
+    
+    override init() {
+        super.init()
+        isNewDocument = true
+    }
+    
     override class var autosavesInPlace: Bool {
         return true
     }
@@ -38,10 +45,24 @@ class MbitDocument: NSDocument {
         }
         
         DispatchQueue.main.async {
+            self.isNewDocument = false
             self.inputTextView.string = xml.input
             self.outputTextView.string = xml.output
             self.promptTextView.string = xml.prompt
             self.scriptTextView.string = xml.script
         }
     }
-}
+    
+    override func windowControllerDidLoadNib(_ windowController: NSWindowController) {
+        super.windowControllerDidLoadNib(windowController)
+        
+        if isNewDocument {
+            guard let scriptURL = Bundle.main.url(forResource: "convert", withExtension: "py") else {
+                fatalError("Unable to load 'convert.py' from app bundle")
+            }
+            guard let scriptContent = try? String(contentsOf: scriptURL, encoding: .utf8) else {
+                fatalError("Unable to read 'convert.py'")
+            }
+            scriptTextView.string = scriptContent
+        }
+    }}

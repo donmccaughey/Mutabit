@@ -7,10 +7,6 @@ class MbitDocument: NSDocument {
     @IBOutlet weak var promptTextView: NSTextView!
     @IBOutlet weak var scriptTextView: NSTextView!
     
-    override init() {
-        super.init()
-    }
-
     override class var autosavesInPlace: Bool {
         return true
     }
@@ -30,7 +26,10 @@ class MbitDocument: NSDocument {
             <script language='Python 3.13'><![CDATA[\(scriptTextView.string)]]></script>
         </mutabit>
         """
-        return xml.data(using: .utf8) ?? Data()
+        guard let data = xml.data(using: .utf8) else {
+            fatalError("Unable to convert document to UTF-8")
+        }
+        return data
     }
 
     override func read(from data: Data, ofType typeName: String) throws {

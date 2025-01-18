@@ -10,6 +10,7 @@
 		D43122732D2B4FF5009B6BB2 /* Mutabit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mutabit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D431228A2D2B5271009B6BB2 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		D431228B2D2B5271009B6BB2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D4FB78042D3B847E006FBA6C /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -52,8 +53,9 @@
 		D431226A2D2B4FF5009B6BB2 = {
 			isa = PBXGroup;
 			children = (
-				D431228A2D2B5271009B6BB2 /* LICENSE */,
 				D431228B2D2B5271009B6BB2 /* README.md */,
+				D4FB78042D3B847E006FBA6C /* TODO.md */,
+				D431228A2D2B5271009B6BB2 /* LICENSE */,
 				D431228D2D2B94F3009B6BB2 /* docs */,
 				D43122752D2B4FF5009B6BB2 /* Mutabit */,
 				D43122742D2B4FF5009B6BB2 /* Products */,

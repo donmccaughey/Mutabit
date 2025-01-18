@@ -1,8 +1,7 @@
-from typing import TextIO
 import sys
 
 
-def convert(input: TextIO, output: TextIO, error: TextIO) -> None:
+def convert(input, output, error):
     try:
         for line in input:
             output.write(line)
@@ -12,7 +11,7 @@ def convert(input: TextIO, output: TextIO, error: TextIO) -> None:
         error.write(f"Unexpected error: {str(e)}\n")
 
 
-def main() -> None:
+def main():
     convert(sys.stdin, sys.stdout, sys.stderr)
 
 

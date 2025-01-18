@@ -11,6 +11,7 @@
                 <outlet property="inputTextView" destination="yEb-Sf-Iv8" id="74k-Jv-uYE"/>
                 <outlet property="outputTextView" destination="gkj-Qd-7eu" id="lLp-Wk-igA"/>
                 <outlet property="promptTextView" destination="sXS-EE-Hna" id="LYv-5O-010"/>
+                <outlet property="runButton" destination="cB7-q1-daO" id="Jfd-wi-mgo"/>
                 <outlet property="scriptTextView" destination="fL6-Ku-3gL" id="jMz-H7-b2j"/>
                 <outlet property="window" destination="xOd-HO-29H" id="JIz-fz-R2o"/>
             </connections>
@@ -27,49 +28,49 @@
                 <rect key="frame" x="0.0" y="0.0" width="800" height="637"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1B-d5-Hlu" userLabel="Input Text View">
+                    <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" translatesAutoresizingMaskIntoConstraints="NO" id="f1B-d5-Hlu" userLabel="Input Text View">
                         <rect key="frame" x="20" y="352" width="372" height="265"/>
                         <clipView key="contentView" drawsBackground="NO" id="G0G-76-2Ru">
                             <rect key="frame" x="0.0" y="0.0" width="372" height="265"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <textView wantsLayer="YES" importsGraphics="NO" richText="NO" verticallyResizable="YES" findStyle="bar" textCompletion="NO" smartInsertDelete="YES" id="yEb-Sf-Iv8">
+                                <textView wantsLayer="YES" importsGraphics="NO" richText="NO" horizontallyResizable="YES" verticallyResizable="YES" findStyle="bar" textCompletion="NO" smartInsertDelete="YES" id="yEb-Sf-Iv8">
                                     <rect key="frame" x="0.0" y="0.0" width="372" height="265"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <size key="minSize" width="372" height="265"/>
-                                    <size key="maxSize" width="397" height="10000000"/>
+                                    <size key="maxSize" width="10000000" height="10000000"/>
                                     <attributedString key="textStorage">
                                         <fragment content="(">
                                             <attributes>
                                                 <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                <font key="NSFont" usesAppearanceFont="YES"/>
+                                                <font key="NSFont" size="14" name="Menlo-Regular"/>
                                                 <font key="NSOriginalFont" size="12" name="Helvetica"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
                                         <fragment content="input">
                                             <attributes>
                                                 <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                <font key="NSFont" size="12" name="Helvetica"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                <font key="NSFont" size="14" name="Menlo-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
                                         <fragment content=")">
                                             <attributes>
                                                 <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                <font key="NSFont" usesAppearanceFont="YES"/>
+                                                <font key="NSFont" size="14" name="Menlo-Regular"/>
                                                 <font key="NSOriginalFont" size="12" name="Helvetica"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
                                 </textView>
                             </subviews>
                         </clipView>
-                        <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="ric-j3-AxI">
-                            <rect key="frame" x="-100" y="-100" width="240" height="16"/>
+                        <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="ric-j3-AxI">
+                            <rect key="frame" x="0.0" y="249" width="372" height="16"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="C4R-Un-oOH">
@@ -77,24 +78,24 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
-                    <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xaz-En-1Fn" userLabel="Prompt Text View">
+                    <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" translatesAutoresizingMaskIntoConstraints="NO" id="Xaz-En-1Fn" userLabel="Prompt Text View">
                         <rect key="frame" x="20" y="68" width="372" height="266"/>
                         <clipView key="contentView" drawsBackground="NO" id="nc2-hr-K1F">
                             <rect key="frame" x="0.0" y="0.0" width="372" height="266"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <textView wantsLayer="YES" importsGraphics="NO" richText="NO" verticallyResizable="YES" findStyle="bar" spellingCorrection="YES" smartInsertDelete="YES" id="sXS-EE-Hna">
+                                <textView wantsLayer="YES" importsGraphics="NO" richText="NO" horizontallyResizable="YES" verticallyResizable="YES" findStyle="bar" spellingCorrection="YES" smartInsertDelete="YES" id="sXS-EE-Hna">
                                     <rect key="frame" x="0.0" y="0.0" width="372" height="266"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <size key="minSize" width="372" height="266"/>
-                                    <size key="maxSize" width="380" height="10000000"/>
+                                    <size key="maxSize" width="10000000" height="10000000"/>
                                     <attributedString key="textStorage">
                                         <fragment content="(prompt)">
                                             <attributes>
                                                 <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                <font key="NSFont" usesAppearanceFont="YES"/>
+                                                <font key="NSFont" size="14" name="Menlo-Regular"/>
                                                 <font key="NSOriginalFont" size="12" name="Helvetica"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
@@ -103,8 +104,8 @@
                                 </textView>
                             </subviews>
                         </clipView>
-                        <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="jEO-5w-cTu">
-                            <rect key="frame" x="-100" y="-100" width="240" height="16"/>
+                        <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="jEO-5w-cTu">
+                            <rect key="frame" x="0.0" y="250" width="372" height="16"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="FgV-Tg-bsf">
@@ -112,24 +113,24 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
-                    <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JIR-40-RrU" userLabel="Output Text View">
+                    <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" translatesAutoresizingMaskIntoConstraints="NO" id="JIR-40-RrU" userLabel="Output Text View">
                         <rect key="frame" x="408" y="352" width="372" height="265"/>
                         <clipView key="contentView" drawsBackground="NO" id="gNw-Sd-stu">
                             <rect key="frame" x="0.0" y="0.0" width="372" height="265"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <textView wantsLayer="YES" importsGraphics="NO" richText="NO" verticallyResizable="YES" findStyle="bar" spellingCorrection="YES" smartInsertDelete="YES" id="gkj-Qd-7eu">
+                                <textView wantsLayer="YES" importsGraphics="NO" richText="NO" horizontallyResizable="YES" verticallyResizable="YES" findStyle="bar" smartInsertDelete="YES" id="gkj-Qd-7eu">
                                     <rect key="frame" x="0.0" y="0.0" width="372" height="265"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <size key="minSize" width="372" height="265"/>
-                                    <size key="maxSize" width="386" height="10000000"/>
+                                    <size key="maxSize" width="10000000" height="10000000"/>
                                     <attributedString key="textStorage">
                                         <fragment content="(output)">
                                             <attributes>
                                                 <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                <font key="NSFont" usesAppearanceFont="YES"/>
+                                                <font key="NSFont" size="14" name="Menlo-Regular"/>
                                                 <font key="NSOriginalFont" size="12" name="Helvetica"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
@@ -138,8 +139,8 @@
                                 </textView>
                             </subviews>
                         </clipView>
-                        <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="u8w-l9-Jpk">
-                            <rect key="frame" x="-100" y="-100" width="240" height="16"/>
+                        <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="u8w-l9-Jpk">
+                            <rect key="frame" x="0.0" y="249" width="372" height="16"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="bLM-Tu-Biu">
@@ -156,25 +157,28 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="28" id="rN8-ay-81L"/>
                         </constraints>
+                        <connections>
+                            <action selector="runScript:" target="-2" id="JVY-PW-Rf9"/>
+                        </connections>
                     </button>
-                    <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xw1-47-swt" userLabel="Script Text View">
+                    <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" translatesAutoresizingMaskIntoConstraints="NO" id="Xw1-47-swt" userLabel="Script Text View">
                         <rect key="frame" x="408" y="68" width="372" height="266"/>
                         <clipView key="contentView" drawsBackground="NO" id="TFZ-w2-qsb">
                             <rect key="frame" x="0.0" y="0.0" width="372" height="266"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <textView wantsLayer="YES" importsGraphics="NO" richText="NO" verticallyResizable="YES" findStyle="bar" spellingCorrection="YES" smartInsertDelete="YES" id="fL6-Ku-3gL">
+                                <textView wantsLayer="YES" importsGraphics="NO" richText="NO" horizontallyResizable="YES" verticallyResizable="YES" findStyle="bar" smartInsertDelete="YES" id="fL6-Ku-3gL">
                                     <rect key="frame" x="0.0" y="0.0" width="372" height="266"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <size key="minSize" width="372" height="266"/>
-                                    <size key="maxSize" width="386" height="10000000"/>
+                                    <size key="maxSize" width="10000000" height="10000000"/>
                                     <attributedString key="textStorage">
                                         <fragment content="(script)">
                                             <attributes>
                                                 <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                <font key="NSFont" usesAppearanceFont="YES"/>
+                                                <font key="NSFont" size="14" name="Menlo-Regular"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
@@ -182,8 +186,8 @@
                                 </textView>
                             </subviews>
                         </clipView>
-                        <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="Oef-Do-eZd">
-                            <rect key="frame" x="-100" y="-100" width="240" height="16"/>
+                        <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="Oef-Do-eZd">
+                            <rect key="frame" x="0.0" y="250" width="372" height="16"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="g6S-7H-ucK">
